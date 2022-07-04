@@ -354,3 +354,6 @@ MigrationBackup/
 /D_PasswdHint/tests
 /C_Notifications/tests
 /B_PairProg/tests
+/I_TaskPlanner/tests.zip
+/J_Rhymes/tests.zip
+/H_MapValidation/tests.zip

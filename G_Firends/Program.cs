@@ -41,27 +41,39 @@ internal class Program
         {
             PossibleFriends.Add(j, new());
         }
-        foreach (var pair in friends)
+        foreach (var friend in friends)
         {
             HashSet<int> _possibleFriends = new();
-            foreach (var f in pair.Value)
+            System.Collections.Hashtable _pairCommonFriends = new();
+            foreach (var f in friend.Value)
             {
                 var _l2Friends = friends[f];
+                HashSet<int> _commonFriends = new();// _l2Friends.Where(l2f => friend.Value.Contains(l2f));
                 foreach (var _l2f in _l2Friends)
                 {
-                    if (!pair.Value.Contains(_l2f) && _l2f != pair.Key)
+                    if (!friend.Value.Contains(_l2f) && _l2f != friend.Key)
                     {
                         _possibleFriends.Add(_l2f);
                     }
-                }
-            }
-            //int _minCommonFriends = friends[_possibleFriends.First()].Count;
-            //foreach (var pf in _possibleFriends)
-            //{
+                    else if (_l2f != friend.Key)
+                    {
+                        _commonFriends.Add(_l2f);
 
+                    }
+                }
+                _pairCommonFriends.Add($"{friend.Key}-{f}", _commonFriends.Count);
+                Console.WriteLine($">>DBG: ({friend.Key})=>[[{f}]] ~[{string.Join(",", _commonFriends)}] x{_commonFriends.Count}");
+            }
+            //if (_possibleFriends.Any())
+            //{
+            //    int _maxCommonFriends = _possibleFriends.Select(pf => friends[pf].Count).Max();
+            //    //PossibleFriends[pair.Key] = _possibleFriends.Where(pf => friends[pf].Count == _maxCommonFriends).OrderBy(pf => pf).ToHashSet();
             //}
-            PossibleFriends[pair.Key] = _possibleFriends;
-            Console.WriteLine($">>DBG: ({pair.Key})=>[{string.Join(",", pair.Value)}] ?[{string.Join(",", _possibleFriends)}]");
+            //else
+            //{
+                PossibleFriends[friend.Key] = _possibleFriends;
+            //}
+            Console.WriteLine($">>DBG: ({friend.Key})=>[{string.Join(",", friend.Value)}] ?[{string.Join(",", _possibleFriends)}]");
 
         }
         foreach (var pair in PossibleFriends.OrderBy(p => p.Key))

@@ -3,19 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A_Task", "A_Task\A_Task.csproj", "{E5D6E2D6-1960-4532-B467-6E6691D3A095}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A_Task", "A_Task\A_Task.csproj", "{E5D6E2D6-1960-4532-B467-6E6691D3A095}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B_PairProg", "B_PairProg\B_PairProg.csproj", "{DE2E2F98-3851-4664-A1FA-74648D5E539F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "B_PairProg", "B_PairProg\B_PairProg.csproj", "{DE2E2F98-3851-4664-A1FA-74648D5E539F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C_Notifications", "C_Notifications\C_Notifications.csproj", "{AFEB70B4-5D92-4B9E-87F4-E9A178DB8A36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "C_Notifications", "C_Notifications\C_Notifications.csproj", "{AFEB70B4-5D92-4B9E-87F4-E9A178DB8A36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D_PasswdHint", "D_PasswdHint\D_PasswdHint.csproj", "{0F7BCE04-A292-416F-A7A0-40805AF72AA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D_PasswdHint", "D_PasswdHint\D_PasswdHint.csproj", "{0F7BCE04-A292-416F-A7A0-40805AF72AA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E_Report", "E_Report\E_Report.csproj", "{347DA5B8-850A-4BBE-916D-9A1786931D5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E_Report", "E_Report\E_Report.csproj", "{347DA5B8-850A-4BBE-916D-9A1786931D5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F_TimeSpan", "F_TimeSpan\F_TimeSpan.csproj", "{D11CBEDB-6D33-416E-B807-E06F33299E2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F_TimeSpan", "F_TimeSpan\F_TimeSpan.csproj", "{D11CBEDB-6D33-416E-B807-E06F33299E2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G_Firends", "G_Firends\G_Firends.csproj", "{5A82CB38-1299-4965-A840-75AF9C74625D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "G_Firends", "G_Firends\G_Firends.csproj", "{5A82CB38-1299-4965-A840-75AF9C74625D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H_MapValidation", "H_MapValidation\H_MapValidation.csproj", "{6A690552-3FB3-44E7-A84D-D396CC9DB9FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I_TaskPlanner", "I_TaskPlanner\I_TaskPlanner.csproj", "{CB767BC9-4BCE-4F47-8BD3-0FD70A1D42EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J_Rhymes", "J_Rhymes\J_Rhymes.csproj", "{B57818D2-E2FB-43CE-B9E7-F8F178618776}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +57,18 @@ Global
 		{5A82CB38-1299-4965-A840-75AF9C74625D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A82CB38-1299-4965-A840-75AF9C74625D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A82CB38-1299-4965-A840-75AF9C74625D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A690552-3FB3-44E7-A84D-D396CC9DB9FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A690552-3FB3-44E7-A84D-D396CC9DB9FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A690552-3FB3-44E7-A84D-D396CC9DB9FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A690552-3FB3-44E7-A84D-D396CC9DB9FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB767BC9-4BCE-4F47-8BD3-0FD70A1D42EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB767BC9-4BCE-4F47-8BD3-0FD70A1D42EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB767BC9-4BCE-4F47-8BD3-0FD70A1D42EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB767BC9-4BCE-4F47-8BD3-0FD70A1D42EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B57818D2-E2FB-43CE-B9E7-F8F178618776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B57818D2-E2FB-43CE-B9E7-F8F178618776}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B57818D2-E2FB-43CE-B9E7-F8F178618776}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B57818D2-E2FB-43CE-B9E7-F8F178618776}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

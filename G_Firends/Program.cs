@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Diagnostics;
+using System.Linq;
 
 namespace Route256Contest;
 class User
@@ -44,45 +45,39 @@ internal class Program
         foreach (var friend in friends)
         {
             HashSet<int> _possibleFriends = new();
-            System.Collections.Hashtable _pairCommonFriends = new();
-            foreach (var f in friend.Value)
+            foreach (var _f in friend.Value.SelectMany(f => friends[f].Where(l2f => !friend.Value.Contains(l2f) && l2f != friend.Key)))
             {
-                var _l2Friends = friends[f];
-                HashSet<int> _commonFriends = new();// _l2Friends.Where(l2f => friend.Value.Contains(l2f));
-                foreach (var _l2f in _l2Friends)
-                {
-                    if (!friend.Value.Contains(_l2f) && _l2f != friend.Key)
-                    {
-                        _possibleFriends.Add(_l2f);
-                    }
-                    else if (_l2f != friend.Key)
-                    {
-                        _commonFriends.Add(_l2f);
-
-                    }
-                }
-                _pairCommonFriends.Add($"{friend.Key}-{f}", _commonFriends.Count);
-                Console.WriteLine($">>DBG: ({friend.Key})=>[[{f}]] ~[{string.Join(",", _commonFriends)}] x{_commonFriends.Count}");
+                _possibleFriends.Add(_f);
             }
-            //if (_possibleFriends.Any())
-            //{
-            //    int _maxCommonFriends = _possibleFriends.Select(pf => friends[pf].Count).Max();
-            //    //PossibleFriends[pair.Key] = _possibleFriends.Where(pf => friends[pf].Count == _maxCommonFriends).OrderBy(pf => pf).ToHashSet();
-            //}
-            //else
-            //{
-                PossibleFriends[friend.Key] = _possibleFriends;
-            //}
-            Console.WriteLine($">>DBG: ({friend.Key})=>[{string.Join(",", friend.Value)}] ?[{string.Join(",", _possibleFriends)}]");
 
+            PossibleFriends[friend.Key] = _possibleFriends;
         }
-        foreach (var pair in PossibleFriends.OrderBy(p => p.Key))
+        foreach (var possibleFriend in PossibleFriends.OrderBy(p => p.Key))
         {
-            sb.AppendLine(pair.Value.Any() ? string.Join(" ", pair.Value) : "0");
+            if (!possibleFriend.Value.Any())
+            {
+                sb.AppendLine("0");
+                continue;
+            }
+            var _l2friends = friends[possibleFriend.Key];
+            Dictionary<int, HashSet<int>> commonFriends = new();
+            foreach (var pf in possibleFriend.Value)
+            {
+                commonFriends.Add(pf, friends[pf].Where(f => _l2friends.Contains(f)).ToHashSet());
+            }
+            int maxFriends = commonFriends.Values.Select(v => v.Count).Max();
+            sb.AppendLine(
+                string.Join(" ", 
+                            commonFriends
+                                .Where(cf => cf.Value.Count == maxFriends)
+                                .Select(c=>c.Key)
+                                .OrderBy(c => c)
+                )
+            );
         }
 
         stopwatch.Stop();
         Console.WriteLine(sb.ToString());
-        Console.WriteLine(">>DBG: Elapsed Time is {0} ms", stopwatch.ElapsedMilliseconds);
+        //Console.WriteLine(">>DBG: Elapsed Time is {0} ms", stopwatch.ElapsedMilliseconds);
     }
 }
